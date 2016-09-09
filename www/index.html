@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <script src="components/loader.js"></script>
-    <script src="lib/onsenui/js/onsenui.min.js"></script>
 
-    <link rel="stylesheet" href="components/loader.css">
+    <!-- <script src="components/loader.js"></script> -->
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <!-- <link rel="stylesheet" href="components/loader.css"> -->
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
@@ -28,7 +32,6 @@
           content.load(page)
             .then(menu.close.bind(menu));
         };
-
     </script>
 </head>
 <body>
@@ -77,7 +80,9 @@
     </ons-page>
   </ons-template>
 
-  <!-- <ons-template id="home.html">
+
+  <!-- PAGES -->
+  <ons-template id="html/pending_tasks.html">
     <ons-page>
       <ons-toolbar>
         <div class="left">
@@ -86,7 +91,7 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Main
+          Pending Tasks
         </div>
       </ons-toolbar>
       <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
@@ -95,7 +100,7 @@
     </ons-page>
   </ons-template>
 
-  <ons-template id="settings.html">
+  <ons-template id="html/completed_tasks.html">
     <ons-page>
       <ons-toolbar>
         <div class="left">
@@ -104,26 +109,11 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Settings
+          Completed Tasks
         </div>
       </ons-toolbar>
     </ons-page>
   </ons-template>
-
-  <ons-template id="about.html">
-    <ons-page>
-      <ons-toolbar>
-        <div class="left">
-          <ons-toolbar-button onclick="fn.open()">
-            <ons-icon icon="md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center">
-          About
-        </div>
-      </ons-toolbar>
-    </ons-page>
-  </ons-template> -->
 
 </body>
 
