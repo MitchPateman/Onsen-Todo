@@ -44,19 +44,6 @@ myApp.services = {
         myApp.services.tasks.remove(taskItem);
       };
 
-      // Add functionality to push 'details_task.html' page with the current element as a parameter.
-      taskItem.querySelector('.center').onclick = function() {
-        document.querySelector('#myNavigator')
-          .pushPage('html/details_task.html',
-            {
-              animation: 'lift',
-              data: {
-                element: taskItem
-              }
-            }
-          );
-      };
-
       // Check if it's necessary to create new categories for this item.
       myApp.services.categories.updateAdd(taskItem.data.category);
 
