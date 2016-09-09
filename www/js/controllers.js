@@ -22,15 +22,6 @@ myApp.controllers = {
     page.querySelector('#myTabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
   },
 
-  // ////////////////////////
-  // // Menu Page Controller //
-  // ////////////////////////
-  // menuPage: function(page) {
-  //   // Set functionality for 'No Category' and 'All' default categories respectively.
-  //   myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item[category-id=""]'));
-  //   myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item:not([category-id])'));
-  // },
-
   ////////////////////////////
   // New Task Page Controller //
   ////////////////////////////
@@ -54,7 +45,7 @@ myApp.controllers = {
 
           // Set selected category to 'All', refresh and pop page.
           document.querySelector('#default-category-list ons-list-item ons-input').checked = true;
-          document.querySelector('#default-category-list ons-list-item').updateCategoryView();
+          //document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
         } else {
@@ -63,7 +54,7 @@ myApp.controllers = {
         }
       };
     });
-  },
+  }
 
   ////////////////////////////////
   // Details Task Page Controller //
