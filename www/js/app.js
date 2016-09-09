@@ -7,5 +7,5 @@ document.addEventListener('init', function(event) {
     myApp.controllers[page.id](page);
   }
 
-  ...
+  // ...
 });
