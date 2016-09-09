@@ -72,6 +72,7 @@
     </ons-splitter>
   </ons-template>
 
+  <!-- Toolbar and Tab bar -->
   <ons-template id="tabbar.html">
     <ons-page id="tabbarPage">
       <ons-toolbar>
@@ -90,8 +91,6 @@
          </div>
        </ons-toolbar>
 
-
-
       <ons-tabbar id="myTabbar" position="auto">
         <ons-tab page="html/pending_tasks.html" label="Pending" active>
         </ons-tab>
@@ -103,27 +102,81 @@
 
   <!-- PAGES -->
   <ons-template id="html/pending_tasks.html">
-    <ons-page>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+    <ons-page id="pendingTasksPage">
+      <p style="text-align: center; opacity: 0.6;">
         Swipe right to open the menu!
       </p>
+      <ons-list id="pending-list">
+      </ons-list>
     </ons-page>
   </ons-template>
 
   <ons-template id="html/completed_tasks.html">
-    <ons-page>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-        Swipe right to open the menu BITCH!
+    <ons-page id="completedTasksPage">
+      <p style="text-align: center; opacity: 0.6;">
+        Swipe right to open the menu!
       </p>
+      <ons-list id="completed-list">
+      </ons-list>
     </ons-page>
   </ons-template>
 
   <ons-template id="html/new_task.html">
-    <ons-page>
+    <ons-page id="newTaskPage">
       <ons-toolbar>
         <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Onsen UI Todo App</div>
-    </ons-toolbar>
+        <div class="center">New Task</div>
+        <div class="right">
+          <ons-if platform="android">
+            <ons-toolbar-button component="button/save-task">
+              <ons-icon icon="md-save"></ons-icon>
+            </ons-toolbar-button>
+          </ons-if>
+        </div>
+      </ons-toolbar>
+
+      <ons-list>
+        <ons-list-header>Add a new task</ons-list-header>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="title-input" type="text" placeholder="I want to..." float></ons-input>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="category-input" type="text" placeholder="Category" float></ons-input>
+          </div>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <div class="center">
+            <ons-input id="description-input" type="text" placeholder="Description" float></ons-input>
+          </div>
+        </ons-list-item>
+      </ons-list>
+
+      <ons-list>
+        <ons-list-header>Other options</ons-list-header>
+        <ons-list-item modifier="nodivider">
+          <label class="center" for="inner-highlight-input">
+            Highlight?
+          </label>
+          <label class="right">
+            <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
+          </label>
+        </ons-list-item>
+        <ons-list-item modifier="nodivider">
+          <label class="center" for="inner-urgent-input">
+            Is it urgent?
+          </label>
+          <label class="right">
+            <ons-switch id="urgent-input" input-id="inner-urgent-input"></ons-switch>
+          </label>
+        </ons-list-item>
+      </ons-list>
+
+      <ons-if platform="ios other">
+        <ons-button modifier="large" component="button/save-task">Add New Task</ons-button>
+      </ons-if>
     </ons-page>
   </ons-template>
 
