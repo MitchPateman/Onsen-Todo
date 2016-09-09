@@ -10,6 +10,7 @@
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 
     <!-- <link rel="stylesheet" href="components/loader.css"> -->
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -39,6 +40,7 @@
   <ons-navigator id="myNavigator" page="splitter.html">
   </ons-navigator>
 
+<!-- SPLITTER SIDE MENU  -->
   <ons-template id="splitter.html">
     <ons-splitter id="mySplitter">
 
@@ -69,25 +71,6 @@
     </ons-splitter>
   </ons-template>
 
-  <!-- <ons-splitter>
-    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-      <ons-page>
-        <ons-list>
-          <ons-list-item onclick="fn.load('home.html')" tappable>
-            Home
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('settings.html')" tappable>
-            Settings
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('about.html')" tappable>
-            About
-          </ons-list-item>
-        </ons-list>
-      </ons-page>
-    </ons-splitter-side>
-    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-  </ons-splitter> -->
-
   <ons-template id="tabbar.html">
     <ons-page id="tabbarPage">
       <!-- ... -->
@@ -100,7 +83,6 @@
       </ons-tabbar>
     </ons-page>
   </ons-template>
-
 
   <!-- PAGES -->
   <ons-template id="html/pending_tasks.html">
