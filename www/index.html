@@ -32,7 +32,20 @@
     </script>
 </head>
 <body>
-  <ons-splitter>
+
+  <ons-navigator id="myNavigator" page="splitter.html">
+  </ons-navigator>
+
+  <ons-template id="splitter.html">
+    <ons-splitter id="mySplitter">
+      <ons-splitter-side page="html/menu.html" swipeable width="250px" collapse swipe-target-width="60px">
+      </ons-splitter-side>
+      <ons-splitter-content page="tabbar.html">
+      </ons-splitter-content>
+    </ons-splitter>
+  </ons-template>
+
+  <!-- <ons-splitter>
     <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
       <ons-page>
         <ons-list>
@@ -49,7 +62,20 @@
       </ons-page>
     </ons-splitter-side>
     <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-  </ons-splitter>
+  </ons-splitter> -->
+
+  <ons-template id="tabbar.html">
+    <ons-page id="tabbarPage">
+      <!-- ... -->
+
+      <ons-tabbar id="myTabbar" position="auto">
+        <ons-tab page="html/pending_tasks.html" label="Pending" active>
+        </ons-tab>
+        <ons-tab page="html/completed_tasks.html" label="Completed">
+        </ons-tab>
+      </ons-tabbar>
+    </ons-page>
+  </ons-template>
 
   <ons-template id="home.html">
     <ons-page>
