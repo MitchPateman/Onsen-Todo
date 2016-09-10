@@ -4,10 +4,7 @@ myApp.controllers = {
   // Tabbar Page Controller //
   //////////////////////////
   tabbarPage: function(page) {
-    // // Set button functionality to open/close the menu.
-    // page.querySelector('[component="button/menu"]').onclick = function() {
-    //   document.querySelector('#mySplitter').left.toggle();
-    // };
+
 
     // Set button functionality to push 'new_task.html' page.
     Array.prototype.forEach.call(page.querySelectorAll('[component="button/new-task"]'), function(element) {
@@ -20,6 +17,15 @@ myApp.controllers = {
 
     // Change tabbar animation depending on platform.
     page.querySelector('#myTabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
+  },
+
+  ////////////////////////
+  // Menu Page Controller //
+  ////////////////////////
+  menuPage: function(page) {
+    // Set functionality for 'No Category' and 'All' default categories respectively.
+    myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item[category-id=""]'));
+    myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item:not([category-id])'));
   },
 
   ////////////////////////////
@@ -44,7 +50,7 @@ myApp.controllers = {
 
           // Set selected category to 'All', refresh and pop page.
           document.querySelector('#default-category-list ons-list-item ons-input').checked = true;
-          //document.querySelector('#default-category-list ons-list-item').updateCategoryView();
+          document.querySelector('#default-category-list ons-list-item').updateCategoryView();
           document.querySelector('#myNavigator').popPage();
 
         } else {
