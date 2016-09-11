@@ -41,7 +41,7 @@ myApp.services = {
       //   });
       // };
 
-      taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
+      // taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
 
       // Add button functionality to remove a task.
       taskItem.querySelector('.right').onclick = function() {
