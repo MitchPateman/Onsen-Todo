@@ -67,7 +67,6 @@ myApp.services = {
 
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
-        taskItem.data = data;
         taskItem.remove();
         taskRef = db.push();
           taskRef.set(null);
