@@ -35,7 +35,7 @@ myApp.services = {
       //Push to Firebase
       var newTaskRef = db.push();
         newTaskRef.set({data});
-
+      var path = newTaskRef.toString();
 
       // Add 'completion' functionality when the checkbox changes.
       taskItem.data.onCheckboxChange = function(event) {
