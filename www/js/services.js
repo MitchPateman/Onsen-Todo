@@ -30,8 +30,8 @@ myApp.services = {
       taskItem.data = data;
 
       //Push to Firebase
-      var newTaskRef = db.push();
-        newTaskRef.set({data});
+      taskItem = db.push();
+        taskItem.set({data});
 
       // Add 'completion' functionality when the checkbox changes.
       taskItem.data.onCheckboxChange = function(event) {
@@ -68,7 +68,7 @@ myApp.services = {
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
         taskItem.remove();
-        
+
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
       });
