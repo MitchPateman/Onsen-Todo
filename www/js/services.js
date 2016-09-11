@@ -29,6 +29,13 @@ myApp.services = {
       // Store data within the element.
       taskItem.data = data;
 
+      //new firebase ref
+      var taskList = new Firebase('https://onsen-todo.firebaseio.com')
+      //Push to Firebase
+      var newTaskRef = taskList.push();
+        newTaskRef.set({data})
+
+
       // Add 'completion' functionality when the checkbox changes.
       taskItem.data.onCheckboxChange = function(event) {
         myApp.services.animators.swipe(taskItem, function() {
