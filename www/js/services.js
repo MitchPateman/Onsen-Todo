@@ -197,28 +197,10 @@ myApp.services = {
   ////////////////////////
   fixtures: [
     {
-      title: 'Figure out the Read/Update for the database',
-      category: 'Todo App',
-      highlight: false,
-      urgent: false
-    },
-    {
-      title: 'Pending and Completed, appendChild on Firebase?',
-      category: 'Todo App',
-      highlight: false,
-      urgent: false
-    },
-    {
       title: 'Meeting with Hub at 10am Monday',
       category: 'Meetings',
-      highlight: true,
-      urgent: true
-    },
-    {
-      title: 'Start building HUB!',
-      category: 'Work',
       highlight: false,
-      urgent: false
+      urgent: true
     }
   ]
 };
