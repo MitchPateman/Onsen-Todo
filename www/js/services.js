@@ -30,10 +30,11 @@ myApp.services = {
       taskItem.data = data;
 
       //new firebase ref
-      var taskList = new Firebase('https://onsen-todo.firebaseio.com')
+      //var taskList = new Firebase('https://onsen-todo.firebaseio.com')
+
       //Push to Firebase
-      var newTaskRef = taskList.push();
-        newTaskRef.set({data})
+      var newTaskRef = db.push();
+        newTaskRef.set({data});
 
 
       // Add 'completion' functionality when the checkbox changes.
