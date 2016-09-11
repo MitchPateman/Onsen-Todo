@@ -57,30 +57,6 @@ myApp.services = {
       pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
     },
 
-    // Modifies the inner data and current view of an existing task.
-    update: function(taskItem, data) {
-      if (data.title !== taskItem.data.title) {
-        // Update title view.
-        taskItem.querySelector('.center').innerHTML = data.title;
-      }
-
-      if (data.category !== taskItem.data.category) {
-        // Modify the item before updating categories.
-        taskItem.setAttribute('category', myApp.services.categories.parseId(data.category));
-        // Check if it's necessary to create new categories.
-        myApp.services.categories.updateAdd(data.category);
-        // Check if it's necessary to remove empty categories.
-        myApp.services.categories.updateRemove(taskItem.data.category);
-
-      }
-
-      // Add or remove the highlight.
-      taskItem.classList[data.highlight ? 'add' : 'remove']('highlight');
-
-      // Store the new data within the element.
-      taskItem.data = data;
-    },
-
     // Deletes a task item and its listeners.
     remove: function(taskItem) {
       taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
