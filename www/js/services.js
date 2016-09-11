@@ -70,7 +70,7 @@ myApp.services = {
         taskItem.data = data;
         taskItem.remove();
         taskRef = db.push();
-          taskRef.set({null});
+          taskRef.set(null);
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
       });
