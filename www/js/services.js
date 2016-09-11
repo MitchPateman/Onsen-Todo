@@ -39,7 +39,7 @@ myApp.services = {
       //     var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
       //     document.querySelector(listId).appendChild(taskItem);
       //   });
-      };
+      // };
 
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
 
