@@ -30,15 +30,14 @@ myApp.services = {
       taskItem.data = data;
 
       //Push to Firebase
-      var TaskRef = db.push();
-        TaskRef.set({data});
+      var taskRef = db.push();
+        taskRef.set({data});
 
       // Add 'completion' functionality when the checkbox changes.
       taskItem.data.onCheckboxChange = function(event) {
         myApp.services.animators.swipe(taskItem, function() {
           var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
           document.querySelector(listId).appendChild(taskItem);
-          document.querySelector(listId).appendChild(TaskRef).set({data});
         });
       };
 
@@ -68,8 +67,10 @@ myApp.services = {
 
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
+        taskItem.data = data;
         taskItem.remove();
-
+        taskRef = db.push();
+          taskRef.set({null});
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
       });
