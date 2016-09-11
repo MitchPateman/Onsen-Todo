@@ -30,18 +30,18 @@ myApp.services = {
       taskItem.data = data;
 
       //Push to Firebase
-      var taskItem = db.push();
-        taskItem.set({data});
+      var taskRef = db.push();
+        taskRef.set({data});
 
       // Add 'completion' functionality when the checkbox changes.
-      // taskItem.data.onCheckboxChange = function(event) {
-      //   myApp.services.animators.swipe(taskItem, function() {
-      //     var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
-      //     document.querySelector(listId).appendChild(taskItem);
-      //   });
-      // };
+      taskItem.data.onCheckboxChange = function(event) {
+        myApp.services.animators.swipe(taskItem, function() {
+          var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
+          document.querySelector(listId).appendChild(taskItem);
+        });
+      };
 
-      // taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
+      taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
 
       // Add button functionality to remove a task.
       taskItem.querySelector('.right').onclick = function() {
