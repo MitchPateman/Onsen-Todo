@@ -38,7 +38,7 @@ myApp.services = {
         myApp.services.animators.swipe(taskItem, function() {
           var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
           document.querySelector(listId).appendChild(taskItem);
-          document.querySelector(listId).appendChild(TaskRef);
+          document.querySelector(listId).appendChild(TaskRef).set({data});
         });
       };
 
