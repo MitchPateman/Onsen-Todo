@@ -29,13 +29,9 @@ myApp.services = {
       // Store data within the element.
       taskItem.data = data;
 
-      //new firebase ref
-      //var taskList = new Firebase('https://onsen-todo.firebaseio.com')
-
       //Push to Firebase
       var newTaskRef = db.push();
         newTaskRef.set({data});
-      //var path = newTaskRef.toString();
 
       // Add 'completion' functionality when the checkbox changes.
       taskItem.data.onCheckboxChange = function(event) {
@@ -72,6 +68,10 @@ myApp.services = {
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
         taskItem.remove();
+        taskItem.data = data;
+        //Push to Firebase
+        var oldTaskRef = db.push();
+          oldTaskRef.remove({data});
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
       });
