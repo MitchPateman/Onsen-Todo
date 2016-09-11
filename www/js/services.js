@@ -68,10 +68,7 @@ myApp.services = {
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
         taskItem.remove();
-        taskItem.data = data;
-        //Push to Firebase
-        var oldTaskRef = db.push();
-          oldTaskRef.remove({data});
+        
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
       });
