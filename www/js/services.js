@@ -79,7 +79,7 @@ myApp.services = {
     },
 
 
-////// THIS WILL BE A REMOVE() /////////
+////// THIS WILL BE A REMOVE() ///////
 
     // Deletes a task item and its listeners.
     remove: function(taskItem) {
