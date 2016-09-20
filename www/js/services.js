@@ -38,12 +38,12 @@ myApp.services = {
 
 ////// THIS SHOULD BE AN UPDATE() or PUSH() I BELIEVE /////////
       // Add 'completion' functionality when the checkbox changes.
-      taskItem.data.onCheckboxChange = function(event) {
-        myApp.services.animators.swipe(taskItem, function() {
-          var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
-          document.querySelector(listId).appendChild(taskItem);
-        });
-      };
+      // taskItem.data.onCheckboxChange = function(event) {
+      //   myApp.services.animators.swipe(taskItem, function() {
+      //     var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
+      //     document.querySelector(listId).appendChild(taskItem);
+      //   });
+      // };
 
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
 
