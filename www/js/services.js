@@ -39,8 +39,8 @@ myApp.services = {
       var taskRefKey = firebase.database().ref().child('taskRef').push().key;
 
       var updates = {};
-      updates['/tasks/' + taskRefKey] = taskItem;
-      
+      updates['/' + taskRefKey] = taskItem;
+
       return firebase.database().ref().update(updates);
 
 
