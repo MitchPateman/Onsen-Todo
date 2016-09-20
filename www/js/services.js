@@ -36,12 +36,12 @@ myApp.services = {
       //var taskID = taskRef.key();
 
       // Get a key for a new Post.
-      var taskRefKey = firebase.database().ref().child('taskRef').push().key;
-
-      var updates = {};
-      updates[taskRefKey] = taskItem;
-
-      return firebase.database().ref().update(updates);
+      // var taskRefKey = firebase.database().ref().child('taskRef').push().key;
+      //
+      // var updates = {};
+      // updates[taskRefKey] = taskItem;
+      //
+      // return firebase.database().ref().update(updates);
 
 
 ////// THIS SHOULD BE AN UPDATE() or PUSH() I BELIEVE /////////
