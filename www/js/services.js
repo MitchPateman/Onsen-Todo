@@ -37,7 +37,7 @@ myApp.services = {
       //var taskID = taskRef.key();
 
       //Get a key for a new Post.
-      var taskRefKey = firebase.database().ref().child('taskRef').push().key;
+      var taskRefKey = firebase.database().ref().push().key;
 
       var updates = {};
       updates[taskRefKey] = taskItem;
