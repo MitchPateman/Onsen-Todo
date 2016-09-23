@@ -60,14 +60,13 @@ myApp.services = {
       // Add button functionality to remove a task.
       taskItem.querySelector('.right').onclick = function() {
         myApp.services.tasks.remove(taskItem);
+        //
       };
 
 
-////// ANOTHER UPDATE() or PUSH() //////
       // Check if it's necessary to create new categories for this item.
       myApp.services.categories.updateAdd(taskItem.data.category);
 
-////// WITH THE PUSH() OR UPDATE()
       // Add the highlight if necessary.
       if (taskItem.data.highlight) {
         taskItem.classList.add('highlight');
@@ -82,7 +81,7 @@ myApp.services = {
 ////// THIS WILL BE A REMOVE() ///////
 
     // Deletes a task item and its listeners.
-    remove: function(taskItem) {
+    remove: function(taskItem, taskID) {
       taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
 
       myApp.services.animators.remove(taskItem, function() {
