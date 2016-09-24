@@ -80,6 +80,7 @@ myApp.services = {
       taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
 
       myApp.services.animators.remove(taskItem, function() {
+
         // Remove the item before updating the categories.
         taskItem.remove();
         firebase.database().ref(taskItem.data.taskID).remove()
