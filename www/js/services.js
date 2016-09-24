@@ -31,9 +31,10 @@ myApp.services = {
 
       //Push to Firebase
       var taskRef = db.push();
-        taskRef.set({data});
         console.log("Firebase Key  " + taskRef.key);
         var taskID = taskRef.key;
+        taskRef.ref(taskID).set({data});
+
 
 
 ////// THIS SHOULD BE AN UPDATE() or PUSH() I BELIEVE /////////
