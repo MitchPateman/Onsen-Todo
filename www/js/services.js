@@ -32,7 +32,7 @@ myApp.services = {
       //Push to Firebase
       var taskRef = db.push();
         taskRef.set({data});
-        console.log("Firebase Key" + taskRef.key);
+        console.log("Firebase Key  " + taskRef.key);
         var taskID = taskRef.key;
 
 
@@ -78,7 +78,7 @@ myApp.services = {
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
         taskItem.remove();
-        firebase.database().ref(taskRef).remove()
+        firebase.database().ref('\"' + taskRef.key + '\"').remove()
 
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
