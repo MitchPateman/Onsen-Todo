@@ -31,9 +31,11 @@ myApp.services = {
 
       //Push to Firebase
       var taskRef = db.push();
+      //Get the ID from firebase push()
         var taskID = taskRef.key;
         console.log("Firebase Key  " + taskID);
         data.taskID = taskID;
+        //add taskID to JSON data and set in firebase
         taskRef.set({data});
 
 
