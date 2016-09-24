@@ -31,7 +31,7 @@ myApp.services = {
 
       //Push to Firebase
       var taskRef = db.push();
-        taskRef.set({data}).key;
+        console.log("\"" + taskRef.set({data}).key+ '\"');
         console.log('\"' + taskRef.push().key + '\"');
 
 
