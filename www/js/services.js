@@ -72,13 +72,13 @@ myApp.services = {
 ////// THIS WILL BE A REMOVE() ///////
 
     // Deletes a task item and its listeners.
-    remove: function(taskItem, taskID) {
+    remove: function(taskItem, taskRef) {
       taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
 
       myApp.services.animators.remove(taskItem, function() {
         // Remove the item before updating the categories.
         taskItem.remove();
-        firebase.database().ref(taskID).remove()
+        db.ref(taskRef).remove()
 
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
