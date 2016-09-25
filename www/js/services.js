@@ -48,14 +48,14 @@ myApp.services = {
           document.querySelector(listId).appendChild(taskItem);
         });
       };
-
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
+      firebase.database().ref(taskItem.data.taskID).update(taskItem.data.onCheckboxChange)
+
 
 
       // Add button functionality to remove a task.
       taskItem.querySelector('.right').onclick = function() {
         myApp.services.tasks.remove(taskItem);
-        //PUT IN REFERENCE TO THE DATABASE HERE
       };
 
 
