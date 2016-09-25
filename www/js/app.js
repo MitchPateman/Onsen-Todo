@@ -15,8 +15,9 @@ document.addEventListener('init', function(event) {
         db.on("value", function(snapshot) {
           console.log(snapshot.val());
           var fillData = snapshot.val();
-          myApp.services.tasks.create(fillData);
-
+          if fillData != null{
+            myApp.services.tasks.create(fillData);
+          }
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
         });
