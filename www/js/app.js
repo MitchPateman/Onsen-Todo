@@ -12,12 +12,13 @@ document.addEventListener('init', function(event) {
     if (page.id === 'menuPage' || page.id === 'pendingTasksPage') {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
         // Attach an asynchronous callback to read the data at our posts reference
-        db.on("value", function(snapshot) {
+        db.on("child_added", function(snapshot) {
           var fillData = snapshot.val();
           console.log(fillData);
-          // if (fillData) {
-          //   myApp.services.tasks.create(fillData);
-          // }
+
+            if (fillData) {
+              myApp.services.tasks.create(fillData);
+            }
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
         });
