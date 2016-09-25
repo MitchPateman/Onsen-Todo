@@ -201,17 +201,5 @@ myApp.services = {
         callback();
       }, 750);
     }
-  },
-
-  ////////////////////////
-  // Initial Data Service //
-  ////////////////////////
-  fixtures: [
-    // {
-    //   title: 'Meeting with Hub at 10am Monday',
-    //   category: 'Meetings',
-    //   highlight: false,
-    //   urgent: true
-    // }
-  ]
+  }
 };
