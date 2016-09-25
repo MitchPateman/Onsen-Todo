@@ -39,8 +39,6 @@ myApp.services = {
         taskRef.set({data});
 
 
-
-////// THIS SHOULD BE AN UPDATE() or PUSH() I BELIEVE /////////
       //Add 'completion' functionality when the checkbox changes.
       taskItem.data.onCheckboxChange = function(event) {
         myApp.services.animators.swipe(taskItem, function() {
@@ -49,8 +47,7 @@ myApp.services = {
         });
       };
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
-      firebase.database().ref(taskItem.data.taskID).remove();
-
+      //firebase.database().ref(taskItem.data.taskID).remove();
 
 
       // Add button functionality to remove a task.
@@ -73,7 +70,7 @@ myApp.services = {
     },
 
 
-////// THIS WILL BE A REMOVE() ///////
+////// THIS IS A REMOVE() ///////
 
     // Deletes a task item and its listeners.
     remove: function(taskItem) {
