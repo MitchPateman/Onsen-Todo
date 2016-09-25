@@ -17,8 +17,13 @@ document.addEventListener('init', function(event) {
           var fillData = snapshot.val();
           console.log(fillData.data);
           var data = fillData.data;
+
+
+//THIS IS BROKEN???? INFINITE LOOP IN APP.JS, OR IN SERVICES CREATE on DB READ//
           //POPULATE THE LIST
           myApp.services.tasks.create(data);
+
+
           //firebase read error msg
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
