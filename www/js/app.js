@@ -16,8 +16,7 @@ document.addEventListener('init', function(event) {
         db.on("child_added", function(snapshot) {
           var fillData = snapshot.val();
           console.log(fillData);
-          var x = 0;
-            if (x < 1) {
+            if (var x < 1) {
               myApp.services.tasks.create(fillData);
               x++;
             }
