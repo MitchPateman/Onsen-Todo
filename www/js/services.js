@@ -207,7 +207,7 @@ myApp.services = {
   ////////////////////////
   // Initial Data Service //
   ////////////////////////
-  fixtures: [
+  fixtures:
     var tasks = firebase.database().ref();
     tasks.on('value', function(snapshot) {
       updatetasks(postElement, snapshot.val());
@@ -218,5 +218,5 @@ myApp.services = {
     //   highlight: false,
     //   urgent: true
     // }
-  ]
+  
 };
