@@ -13,7 +13,7 @@ document.addEventListener('init', function(event) {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
 
         // Attach an asynchronous callback to read the data at our posts reference
-        db.on("child_added", function(snapshot) {
+        db.once("value").then(function(snapshot) {
           var fillData = snapshot.val();
           console.log(fillData.data);
           var data = fillData.data;
@@ -23,7 +23,6 @@ document.addEventListener('init', function(event) {
           //POPULATE THE LIST
           //if data doesnt exist already
             //myApp.services.tasks.create(data);
-
 
           //firebase read error msg
         }, function (errorObject) {
