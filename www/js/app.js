@@ -14,7 +14,7 @@ document.addEventListener('init', function(event) {
         // Attach an asynchronous callback to read the data at our posts reference
         db.on("value", function(snapshot) {
           console.log(snapshot.val());
-          var fillData = snapshot.val();
+          var fillData = snapshot.val(data);
           myApp.services.tasks.create(fillData);
 
         }, function (errorObject) {
