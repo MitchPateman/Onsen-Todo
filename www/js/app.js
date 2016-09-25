@@ -11,13 +11,11 @@ document.addEventListener('init', function(event) {
     //This only happens once at the beginning of the app.
     if (page.id === 'menuPage' || page.id === 'pendingTasksPage') {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
-        if (added != true) {
           // Attach an asynchronous callback to read the data at our posts reference
           db.on("child_added", function(snapshot) {
             var fillData = snapshot.val();
             console.log(fillData);
-                myApp.services.tasks.create(fillData);
-                added = true;
+                //myApp.services.tasks.create(fillData.data);
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
           });
