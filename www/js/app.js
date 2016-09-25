@@ -17,7 +17,7 @@ document.addEventListener('init', function(event) {
           var fillData = snapshot.val();
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
-        });
+        }),
         fillData.forEach(function(data) {
           myApp.services.tasks.create(data);
         });
