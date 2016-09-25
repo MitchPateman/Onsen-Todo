@@ -44,7 +44,7 @@ myApp.services = {
         myApp.services.animators.swipe(taskItem, function() {
           var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
           document.querySelector(listId).appendChild(taskItem);
-          
+
         });
       };
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
@@ -70,7 +70,7 @@ myApp.services = {
     },
 
 
-////// THIS IS A REMOVE() ///////
+////// THIS IS REMOVE() ///////
 
     // Deletes a task item and its listeners.
     remove: function(taskItem) {
@@ -80,7 +80,7 @@ myApp.services = {
 
         // Remove the item before updating the categories.
         taskItem.remove();
-        firebase.database().ref(taskItem.data.taskID).remove()
+        firebase.database().ref("/tasks" + taskItem.data.taskID).remove()
 
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
