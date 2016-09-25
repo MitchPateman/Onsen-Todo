@@ -18,9 +18,9 @@ document.addEventListener('init', function(event) {
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
         });
-        // snapshot.forEach(function(data) {
-        //   myApp.services.tasks.create(data);
-        // });
+        snapshot.val().forEach(function(data) {
+          myApp.services.tasks.create(data);
+        });
       }
     }
 
