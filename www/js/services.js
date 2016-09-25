@@ -80,7 +80,7 @@ myApp.services = {
 
         // Remove the item before updating the categories.
         taskItem.remove();
-        firebase.database().ref("/tasks" + taskItem.data.taskID).remove()
+        firebase.database().ref("/tasks/" + taskItem.data.taskID).remove()
 
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
