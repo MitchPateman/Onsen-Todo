@@ -44,10 +44,11 @@ myApp.services = {
         myApp.services.animators.swipe(taskItem, function() {
           var listId = (taskItem.parentElement.id === 'pending-list' && event.target.checked) ? '#completed-list' : '#pending-list';
           document.querySelector(listId).appendChild(taskItem);
+          //firebase.database().ref(taskItem.data.taskID).remove();
+
         });
       };
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
-      //firebase.database().ref(taskItem.data.taskID).remove();
 
 
       // Add button functionality to remove a task.
@@ -207,6 +208,10 @@ myApp.services = {
   // Initial Data Service //
   ////////////////////////
   fixtures: [
+    var tasks = firebase.database().ref();
+    tasks.on('value', function(snapshot) {
+      updatetasks(postElement, snapshot.val());
+    });
     // {
     //   title: 'Meeting with Hub at 10am Monday',
     //   category: 'Meetings',
