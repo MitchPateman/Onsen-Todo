@@ -6,7 +6,7 @@ document.addEventListener('init', function(event) {
   if (myApp.controllers.hasOwnProperty(page.id)) {
     myApp.controllers[page.id](page);
   }
-  var added = false;
+  var added;
   // Fill the lists with initial data when the pages we need are ready.
     //This only happens once at the beginning of the app.
     if (page.id === 'menuPage' || page.id === 'pendingTasksPage') {
