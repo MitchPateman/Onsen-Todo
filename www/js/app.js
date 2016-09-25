@@ -17,7 +17,7 @@ document.addEventListener('init', function(event) {
           var fillData = snapshot.val();
           console.log(fillData.data);
           //POPULATE THE LIST
-          myApp.services.tasks.create(fillData.data.data);
+          myApp.services.tasks.create(fillData.data);
           //firebase read error msg
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
