@@ -15,7 +15,7 @@ document.addEventListener('init', function(event) {
         db.on("value", function(snapshot) {
           console.log(snapshot.val());
           var fillData = snapshot.val();
-          if fillData {
+          if (fillData) {
             myApp.services.tasks.create(fillData);
           }
         }, function (errorObject) {
