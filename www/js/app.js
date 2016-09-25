@@ -16,7 +16,8 @@ document.addEventListener('init', function(event) {
         db.on("child_added", function(snapshot) {
           var fillData = snapshot.val();
           console.log(fillData.data);
-              //myApp.services.tasks.create(fillData);
+          //POPULATE THE LIST
+          myApp.services.tasks.create(fillData.data);
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
         });
