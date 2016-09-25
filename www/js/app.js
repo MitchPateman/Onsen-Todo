@@ -16,5 +16,14 @@ document.addEventListener('init', function(event) {
     //     });
     //   }
     // }
+  // Get a database reference to our posts
+  var ref = new Firebase("https://onsen-todo.firebaseio.com/tasks");
+
+  // Attach an asynchronous callback to read the data at our posts reference
+  ref.on("value", function(snapshot) {
+    console.log(snapshot.val());
+  }, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
 
 });
