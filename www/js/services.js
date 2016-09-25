@@ -11,7 +11,7 @@ myApp.services = {
       // Task item template.
       var template = document.createElement('div');
       template.innerHTML =
-        '<ons-list-item tappable category="' + myApp.services.categories.parseId(data.category)+ '">' +
+        '<ons-list-item category="' + myApp.services.categories.parseId(data.category)+ '">' +
           '<label class="left">' +
            '<ons-input type="checkbox"></ons-input>' +
           '</label>' +
