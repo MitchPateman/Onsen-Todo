@@ -49,7 +49,7 @@ myApp.services = {
         });
       };
       taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
-      firebase.database().ref(taskItem.data.taskID).update(taskItem.data)
+      firebase.database().ref(taskItem.data.taskID).set(taskItem.data.onCheckboxChange);
 
 
 
