@@ -15,7 +15,7 @@ document.addEventListener('init', function(event) {
         // Attach an asynchronous callback to read the data at our posts reference
         db.on("child_added", function(snapshot) {
           var fillData = snapshot.val();
-          console.log(fillData);
+          console.log(fillData.data);
               //myApp.services.tasks.create(fillData);
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
