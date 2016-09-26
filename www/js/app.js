@@ -22,7 +22,7 @@ document.addEventListener('init', function(event) {
             var listItemCenter = pendingList.querySelectorAll('.center.list__item__center');
               if (listItemCenter[0] && data.title !== listItemCenter[listItemCenter.length-1].innerHTML) {
                 myApp.services.tasks.create(data);
-              };
+              }
               else if (!listItemCenter[0]) {
                 myApp.services.tasks.create(data);
               };
