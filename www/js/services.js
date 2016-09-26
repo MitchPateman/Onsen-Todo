@@ -70,7 +70,7 @@ myApp.services = {
       var pendingList = document.querySelector('#pending-list');
       var listItemCenter = pendingList.querySelectorAll('.center.list__item__center');
       if (listItemCenter[0]) {
-        if (taskItem.data.title !== listItemCenter[listItemCenter.length].innerHTML){
+        if (taskItem.data.title !== listItemCenter[(listItemCenter.length)-1].innerHTML){
           pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
         };
       }
