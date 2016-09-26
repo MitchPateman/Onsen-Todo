@@ -34,22 +34,27 @@ document.addEventListener('init', function(event) {
             var pendingList = document.querySelector('#pending-list');
             var listItemCenter = pendingList.querySelectorAll('.center.list__item__center')
 
-            //Loop through the listItems
+            //Loop through the listItems and remove if they are the same
             for (var i = 0; i < listItemCenter.length; i++) {
               if (listItemCenter[i].innerHTML !== deletedTask.data.title){
-
                 console.log(listItemCenter[i].innerHTML);
               }
               else {
-                console.log("THEY ARE THE SAME BITCH!!!!")
+
+                console.log("TITLES ARE THE SAME, REMOVING \"" + listItemCenter[i].innerHTML + "\" FROM APP NOW!")
+                console.log("TaskItem # " + i)
+                var taskItem = listItemCenter[i]
+                console.log(listItemCenter[i])
+
+
+                //Remove the task item that matches this data
+                //myApp.services.tasks.remove(taskItem);
               };
             };
 
 
-            //var taskItem = deletedTask.data;
 
-            //Remove the task item that matches this data
-            //myApp.services.tasks.remove(taskItem);
+
           });
       };
     };
