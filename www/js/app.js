@@ -6,8 +6,9 @@ document.addEventListener('init', function(event) {
   if (myApp.controllers.hasOwnProperty(page.id)) {
     myApp.controllers[page.id](page);
   }
+//THIS IS THE REF TO THE FIREBASE
 
-  // Fill the lists with data when the pages we need are ready.
+  // CREATE-Fill the lists with data when the pages we need are ready.
     if (page.id === 'menuPage' || page.id === 'pendingTasksPage') {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
 
@@ -17,7 +18,9 @@ document.addEventListener('init', function(event) {
               var data = fillData.data;
               console.log(data);
             //POPULATE THE LIST
+            if (data.title !== listItemCenter[i].innerHTML) {
               myApp.services.tasks.create(data);
+            };
             //firebase read error msg
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
