@@ -7,8 +7,7 @@ document.addEventListener('init', function(event) {
     myApp.controllers[page.id](page);
   }
 
-  // Fill the lists with initial data when the pages we need are ready.
-    //This only happens once at the beginning of the app.
+  // Fill the lists with data when the pages we need are ready.
     if (page.id === 'menuPage' || page.id === 'pendingTasksPage') {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
 
@@ -17,13 +16,10 @@ document.addEventListener('init', function(event) {
           var fillData = snapshot.val();
             var data = fillData.data;
             console.log(data);
-
-
-
-//THIS IS BROKEN???? INFINITE LOOP IN APP.JS, OR IN SERVICES CREATE on DB READ//
           //POPULATE THE LIST
-          //if data doesnt exist already
-            myApp.services.tasks.create(data);
+            if (!data.taskID) {
+              myApp.services.tasks.create(data);
+            }
 
           //firebase read error msg
         }, function (errorObject) {
