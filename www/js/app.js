@@ -32,7 +32,7 @@ document.addEventListener('init', function(event) {
 
             //Get the matching task list Item to the firebase task
             var pendingList = document.querySelector('#pending-list');
-            console.log(pendingList);
+            console.log(pendingList.child);
 
 
             var taskItem = deletedTask.data;
