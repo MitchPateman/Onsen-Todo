@@ -24,7 +24,7 @@ document.addEventListener('init', function(event) {
               if (data.title !== listItemCenter[listItemCenter.length-1].innerHTML) {
                 myApp.services.tasks.create(data);
               };
-            };
+            }
             else {
               myApp.services.tasks.create(data);
             }
