@@ -23,7 +23,7 @@ document.addEventListener('init', function(event) {
 //THIS IS BROKEN???? INFINITE LOOP IN APP.JS, OR IN SERVICES CREATE on DB READ//
           //POPULATE THE LIST
           //if data doesnt exist already
-            //myApp.services.tasks.create(data);
+            myApp.services.tasks.create(data);
 
           //firebase read error msg
         }, function (errorObject) {
