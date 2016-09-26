@@ -27,8 +27,8 @@ document.addEventListener('init', function(event) {
           // Get the data on a post that has been removed
           db.on("child_removed", function(snapshot) {
             var deletedPost = snapshot.val();
-            console.log("The task titled '" + deletedPost.title + "' has been deleted from firebase, and now your app!");
-            console.log(deletedPost);
+            console.log("The task titled '" + deletedPost.data.title + "' has been deleted from firebase, and now your app!");
+            console.log(deletedPost.data);
           });
       }
     }
