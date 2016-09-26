@@ -46,7 +46,7 @@ document.addEventListener('init', function(event) {
                 var taskTitle = listItemCenter[i].innerHTML
                 //Remove the task item that matches this data
                 if (true) {
-                  var taskItem = listItemCenter[i].lastChild.parentNode.parentNode.data
+                  var taskItem = listItemCenter[i].lastChild.parentNode.parentNode
                   console.log(taskItem)
                   myApp.services.tasks.remove(taskItem);
                 };
