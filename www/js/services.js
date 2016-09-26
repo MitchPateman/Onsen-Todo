@@ -73,10 +73,10 @@ myApp.services = {
         if (taskItem.data.title !== listItemCenter[listItemCenter.length].innerHTML){
           pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
         };
-      };
+      }
       else {
         pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
-      }
+      };
     },
 
 
