@@ -30,15 +30,15 @@ myApp.services = {
       taskItem.data = data;
 
       //Push to Firebase
-      //if (data.title != "ccc") {
-        //var taskRef = db.push();
+      if (data.taskID != false) {
+        var taskRef = db.push();
       //Get the ID from firebase push()
-        // var taskID = taskRef.key;
-        // console.log("Firebase Key  " + taskID);
-        // data.taskID = taskID;
+        var taskID = taskRef.key;
+        console.log("Firebase Key  " + taskID);
+        data.taskID = taskID;
         //add taskID to JSON data and set in firebase
-        // taskRef.set({data});
-      //};
+        taskRef.set({data});
+      };
 
 
       //Add 'completion' functionality when the checkbox changes.
