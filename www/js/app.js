@@ -29,7 +29,11 @@ document.addEventListener('init', function(event) {
             var deletedTask = snapshot.val();
             console.log("The task titled '" + deletedTask.data.title + "' has been deleted from firebase");
             console.log(deletedTask.data);
-            var taskItem = deletedTask.data
+            var taskItem = deletedTask.data;
+
+            var pendingList = document.querySelector('#pending-list');
+            console.log(pendingList);
+
             //Remove the task item that matches this data
             //myApp.services.tasks.remove(taskItem);
           });
