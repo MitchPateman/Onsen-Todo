@@ -44,10 +44,10 @@ document.addEventListener('init', function(event) {
                 console.log("TITLES ARE THE SAME, REMOVING \"" + listItemCenter[i].innerHTML + "\" FROM APP NOW!")
                 console.log("listItem # " + i)
                 var taskTitle = listItemCenter[i].innerHTML
-                console.log(listItemCenter[i])
                 //Remove the task item that matches this data
                 if (true) {
                   var taskItem = listItemCenter[i].lastChild.parentNode.parentNode.data
+                  console.log(taskItem)
                   myApp.services.tasks.remove(taskItem);
                 };
               };
