@@ -20,10 +20,10 @@ document.addEventListener('init', function(event) {
             //POPULATE THE LIST
             var pendingList = document.querySelector('#pending-list');
             var listItemCenter = pendingList.querySelectorAll('.center.list__item__center');
-              if (listItemCenter[0] && data.title !== listItemCenter[listItemCenter.length-1].innerHTML) {
+              if (!listItemCenter[0]) {
                 myApp.services.tasks.create(data);
               }
-              else if (data.title !== listItemCenter[listItemCenter.length-1].innerHTML) {
+              else if (listItemCenter[0] && data.title !== listItemCenter[(listItemCenter.length)-1].innerHTML) {
                 myApp.services.tasks.create(data);
               };
             //firebase read error msg
