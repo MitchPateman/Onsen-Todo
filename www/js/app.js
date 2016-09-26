@@ -23,9 +23,9 @@ document.addEventListener('init', function(event) {
               if (listItemCenter[0] && data.title !== listItemCenter[listItemCenter.length-1].innerHTML) {
                 myApp.services.tasks.create(data);
               };
-              // else if {
-              //   //myApp.services.tasks.create(data);
-              // };
+              else if (!listItemCenter[0]) {
+                myApp.services.tasks.create(data);
+              };
             //firebase read error msg
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
