@@ -17,9 +17,9 @@ document.addEventListener('init', function(event) {
             var data = fillData.data;
             console.log(data);
           //POPULATE THE LIST
-            if (!data.taskID) {
+            if (data.taskID) {
               myApp.services.tasks.create(data);
-            }
+            };
 
           //firebase read error msg
         }, function (errorObject) {
