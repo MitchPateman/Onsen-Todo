@@ -25,6 +25,9 @@ document.addEventListener('init', function(event) {
                 myApp.services.tasks.create(data);
               };
             }
+            else {
+              myApp.services.tasks.create(data);
+            }
             //firebase read error msg
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
