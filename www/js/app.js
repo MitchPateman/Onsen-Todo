@@ -13,7 +13,7 @@ document.addEventListener('init', function(event) {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
 
         // Attach an asynchronous callback to read the data at our posts reference
-        db.once("child_added", function(snapshot) {
+        db.once("value", function(snapshot) {
           var fillData = snapshot.val();
           var data = fillData.data;
           console.log(data);
