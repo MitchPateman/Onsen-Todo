@@ -31,7 +31,6 @@ document.addEventListener('init', function(event) {
 
             //Get the matching task list Item to the firebase task
             var pendingList = document.querySelector('#pending-list');
-
             var listItemCenter = pendingList.querySelectorAll('.center.list__item__center')
 
             //Loop through the listItems and remove if they are the same
@@ -40,22 +39,12 @@ document.addEventListener('init', function(event) {
                 console.log(listItemCenter[i].innerHTML);
               }
               else {
-
                 console.log("TITLES ARE THE SAME, REMOVING \"" + listItemCenter[i].innerHTML + "\" FROM APP NOW!")
-                console.log("listItem # " + i)
-                var taskTitle = listItemCenter[i].innerHTML
                 //Remove the task item that matches this data
-                if (true) {
-                  var taskItem = listItemCenter[i].lastChild.parentNode.parentNode
-                  console.log(taskItem)
-                  myApp.services.tasks.remove(taskItem);
-                };
+                var taskItem = listItemCenter[i].lastChild.parentNode.parentNode
+                myApp.services.tasks.remove(taskItem);
               };
             };
-
-
-
-
           });
       };
     };
