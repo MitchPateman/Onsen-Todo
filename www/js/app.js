@@ -33,14 +33,14 @@ document.addEventListener('init', function(event) {
       console.log(deletedPost.data);
         var taskItem = deletedPost.data;
       //Remove the task item that matches this data
-      remove(taskItem);
+      removeAuto(taskItem);
     });
 
 });
 // THIS IS REMOVE() ///////
 
     // Deletes a task item and its listeners.
-    remove: function(taskItem) {
+    removeAuto: function(taskItem) {
       //taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
 
       myApp.services.animators.remove(taskItem, function() {
