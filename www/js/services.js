@@ -196,8 +196,8 @@ myApp.services = {
 
     // Remove animation for task deletion.
     remove: function(listItem, callback) {
-      listItem.classList.add('animation-remove');
-      listItem.classList.add('hide-children');
+      //listItem.classList.add('animation-remove');
+      //listItem.classList.add('hide-children');
 
       setTimeout(function() {
         callback();
