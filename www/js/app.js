@@ -33,7 +33,32 @@ document.addEventListener('init', function(event) {
       console.log(deletedPost.data);
         var taskItem = deletedPost.data;
       //Remove the task item that matches this data
-      myApp.services.tasks.remove(taskItem);
+      remove(taskItem);
     });
 
 });
+// THIS IS REMOVE() ///////
+
+    // Deletes a task item and its listeners.
+    remove: function(taskItem) {
+      //taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
+
+      myApp.services.animators.remove(taskItem, function() {
+
+        // Remove the item before updating the categories.
+        taskItem.remove();
+        firebase.database().ref("/tasks/" + taskItem.data.taskID).remove()
+
+        // Check if the category has no items and remove it in that case.
+        myApp.services.categories.updateRemove(taskItem.data.category);
+      }),
+      // Remove animation for task deletion.
+      remove: function(listItem, callback) {
+        listItem.classList.add('animation-remove');
+        listItem.classList.add('hide-children');
+
+        setTimeout(function() {
+          callback();
+        }, 750);
+      };
+    }
