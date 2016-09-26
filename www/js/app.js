@@ -16,7 +16,7 @@ document.addEventListener('init', function(event) {
         db.once("child_added", function(snapshot) {
           var fillData = snapshot.val();
           //var data = fillData.data;
-          console.log(data);
+          console.log(fillData);
 
 
 //THIS IS BROKEN???? INFINITE LOOP IN APP.JS, OR IN SERVICES CREATE on DB READ//
