@@ -76,7 +76,7 @@ myApp.services = {
 
     // Deletes a task item and its listeners.
     remove: function(taskItem) {
-      taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
+      //taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
       console.log(taskItem);
       myApp.services.animators.remove(taskItem, function() {
 
