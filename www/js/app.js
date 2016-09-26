@@ -13,16 +13,16 @@ document.addEventListener('init', function(event) {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
 
         // Attach an asynchronous callback to read the data at our posts reference
-        db.on("child_added", function(snapshot) {
+        db.once("child_added", function(snapshot) {
           var fillData = snapshot.val();
-          var data = fillData.data;
+          //var data = fillData.data;
           console.log(data);
 
 
 //THIS IS BROKEN???? INFINITE LOOP IN APP.JS, OR IN SERVICES CREATE on DB READ//
           //POPULATE THE LIST
           //if data doesnt exist already
-            myApp.services.tasks.create(data);
+            myApp.services.tasks.create(fillData);
 
           //firebase read error msg
         }, function (errorObject) {
