@@ -26,12 +26,12 @@ document.addEventListener('init', function(event) {
           // REMOVE FROM THE LIST IF ITS DELETED FROM FIREBASE
           // Get the data on a post that has been removed
           db.on("child_removed", function(snapshot) {
-            var deletedPost = snapshot.val();
-            console.log("The task titled '" + deletedPost.data.title + "' has been deleted from firebase, and now your app!");
-            console.log(deletedPost.data);
-              var taskItem = deletedPost.data
+            var deletedTask = snapshot.val();
+            console.log("The task titled '" + deletedTask.data.title + "' has been deleted from firebase");
+            console.log(deletedTask.data);
+            var taskItem = deletedTask.data
             //Remove the task item that matches this data
-            myApp.services.tasks.remove(taskItem);
+            //myApp.services.tasks.remove(taskItem);
           });
       };
     };
