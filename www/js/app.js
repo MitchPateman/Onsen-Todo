@@ -19,10 +19,15 @@ document.addEventListener('init', function(event) {
               console.log(data);
             //POPULATE THE LIST
             var pendingList = document.querySelector('#pending-list');
-            var listItemCenter = pendingList.querySelectorAll('.center.list__item__center')
+            var listItemCenter = pendingList.querySelectorAll('.center.list__item__center');
+            if (listItemCenter[0]){
               if (data.title !== listItemCenter[listItemCenter.length].innerHTML) {
                 myApp.services.tasks.create(data);
               };
+            }
+            else {
+              myApp.services.tasks.create(data);
+            }
             //firebase read error msg
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
