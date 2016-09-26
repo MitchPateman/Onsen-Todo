@@ -17,7 +17,7 @@ document.addEventListener('init', function(event) {
             var data = fillData.data;
             console.log(data);
           //POPULATE THE LIST
-            if (data.taskID) {
+            if (data.taskID != taskItem.data.taskID) {
               myApp.services.tasks.create(data);
             };
 
