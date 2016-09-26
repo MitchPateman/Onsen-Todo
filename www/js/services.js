@@ -78,7 +78,7 @@ myApp.services = {
     remove: function(taskItem) {
       //taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
       console.log(taskItem);
-      myApp.services.animators.remove(taskItem, function() {
+      //myApp.services.animators.remove(taskItem, function() {
 
         // Remove the item before updating the categories.
         taskItem.remove();
@@ -86,7 +86,7 @@ myApp.services = {
 
         // Check if the category has no items and remove it in that case.
         myApp.services.categories.updateRemove(taskItem.data.category);
-      });
+      //});
     }
   },
 
