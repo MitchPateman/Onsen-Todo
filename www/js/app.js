@@ -32,7 +32,7 @@ document.addEventListener('init', function(event) {
 
             //Get the matching task list Item to the firebase task
             var pendingList = document.querySelector('#pending-list');
-            var listItemCenter = pendingList.querySelectorAll('.center.list__item__center.innerText')
+            var listItemCenter = pendingList.querySelectorAll('.center.list__item__center')
               console.log(pendingList);
               console.log(listItemCenter);
 
