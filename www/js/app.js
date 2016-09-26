@@ -24,13 +24,17 @@ document.addEventListener('init', function(event) {
           });
 
           // REMOVE FROM THE LIST IF ITS DELETED FROM FIREBASE
-          // Get the data on a post that has been removed
           db.on("child_removed", function(snapshot) {
-            var pendingList = document.querySelector('#pending-list');
-            console.log(pendingList);
+            // Get the data on a post that has been removed
             var deletedTask = snapshot.val();
             console.log("The task titled '" + deletedTask.data.title + "' has been deleted from firebase");
             console.log(deletedTask.data);
+
+            //Get the matching task list Item to the firebase task
+            var pendingList = document.querySelector('#pending-list/.list__item');
+            console.log(pendingList);
+
+
             var taskItem = deletedTask.data;
 
             //Remove the task item that matches this data
