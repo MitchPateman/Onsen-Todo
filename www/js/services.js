@@ -68,10 +68,7 @@ myApp.services = {
 
       // Insert urgent tasks at the top and non urgent tasks at the bottom.
       var pendingList = document.querySelector('#pending-list');
-      var listItemCenter = pendingList.querySelectorAll('.center.list__item__center');
-        if (taskItem.data.title !== listItemCenter[listItemCenter.length-1].innerHTML) {
-          pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
-        };
+      pendingList.insertBefore(taskItem, taskItem.data.urgent ? pendingList.firstChild : null);
     },
 
 
