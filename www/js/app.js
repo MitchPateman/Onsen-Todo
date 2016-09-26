@@ -36,7 +36,7 @@ document.addEventListener('init', function(event) {
 
             //Loop through the listItems
             for (var i = 0; i < listItemCenter.length; i++) {
-              console.log(listItemCenter[i]);
+              console.log(listItemCenter[i].innerHTML);
             }
 
 
