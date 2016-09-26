@@ -31,34 +31,9 @@ document.addEventListener('init', function(event) {
       var deletedPost = snapshot.val();
       console.log("The task titled '" + deletedPost.data.title + "' has been deleted from firebase, and now your app!");
       console.log(deletedPost.data);
-        var taskItem = deletedPost.data;
+        var taskItem = deletedPost.data
       //Remove the task item that matches this data
-      removeAuto(taskItem);
+      myApp.services.tasks.remove(taskItem);
     });
-
+    
 });
-// THIS IS REMOVE() ///////
-
-    // Deletes a task item and its listeners.
-    removeAuto: function(taskItem) {
-      //taskItem.removeEventListener('change', taskItem.data.onCheckboxChange);
-
-      myApp.services.animators.remove(taskItem, function() {
-
-        // Remove the item before updating the categories.
-        taskItem.remove();
-        firebase.database().ref("/tasks/" + taskItem.data.taskID).remove()
-
-        // Check if the category has no items and remove it in that case.
-        myApp.services.categories.updateRemove(taskItem.data.category);
-      }),
-      // Remove animation for task deletion.
-      remove: function(listItem, callback) {
-        listItem.classList.add('animation-remove');
-        listItem.classList.add('hide-children');
-
-        setTimeout(function() {
-          callback();
-        }, 750);
-      };
-    }
