@@ -28,7 +28,6 @@ document.addEventListener('init', function(event) {
             // Get the data on a post that has been removed
             var deletedTask = snapshot.val();
             console.log("The task titled '" + deletedTask.data.title + "' has been deleted from firebase");
-            console.log(deletedTask.data.title);
 
             //Get the matching task list Item to the firebase task
             var pendingList = document.querySelector('#pending-list');
@@ -43,7 +42,7 @@ document.addEventListener('init', function(event) {
 
                 console.log("TITLES ARE THE SAME, REMOVING \"" + listItemCenter[i].innerHTML + "\" FROM APP NOW!")
                 console.log("TaskItem # " + i)
-                var taskItem = listItemCenter[i]
+                var taskItem = listItemCenter[i].parentElement
                 console.log(listItemCenter[i])
 
 
