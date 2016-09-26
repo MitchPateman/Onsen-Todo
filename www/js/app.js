@@ -42,8 +42,7 @@ document.addEventListener('init', function(event) {
 
                 console.log("TITLES ARE THE SAME, REMOVING \"" + listItemCenter[i].innerHTML + "\" FROM APP NOW!")
                 console.log("TaskItem # " + i)
-                var taskItem = listItemCenter[i].parentElement
-                console.log(listItemCenter[i])
+                var taskItemTitle = listItemCenter[i].innerHTML
 
 
                 //Remove the task item that matches this data
