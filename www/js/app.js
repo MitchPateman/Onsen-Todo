@@ -17,7 +17,7 @@ document.addEventListener('init', function(event) {
             var data = fillData.data;
             console.log(data);
           //POPULATE THE LIST
-            if (data.taskID != taskItem.data.taskID) {
+            if (data.taskID != pendingList.lastChild.data.taskID || pendingList.firstChild.data.taskID) {
               myApp.services.tasks.create(data);
             };
 
