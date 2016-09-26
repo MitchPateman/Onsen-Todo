@@ -33,7 +33,8 @@ document.addEventListener('init', function(event) {
       console.log(deletedPost.data);
       var taskItem = deletedPost
       //Remove the task item that matches this data
-      myApp.services.tasks.remove(taskItem);
+      myApp.services.tasks.taskItem.remove();
+
     });
 
 });
