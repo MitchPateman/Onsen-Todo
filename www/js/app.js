@@ -34,7 +34,7 @@ document.addEventListener('init', function(event) {
             var pendingList = document.querySelector('#pending-list');
             var listItemCenter = pendingList.querySelector('.center.list__item__center')
             for (listItemCenter in pendingList) {
-                console.log(.center);
+                console.log(listItemCenter);
             }
 
 
