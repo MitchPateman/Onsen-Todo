@@ -31,7 +31,7 @@ document.addEventListener('init', function(event) {
       var deletedPost = snapshot.val();
       console.log("The task titled '" + deletedPost.data.title + "' has been deleted from firebase, and now your app!");
       console.log(deletedPost.data);
-      var taskItem = deletedPost.data
+        var taskItem = deletedPost.data.taskID
       //Remove the task item that matches this data
       myApp.services.tasks.remove(taskItem);
     });
