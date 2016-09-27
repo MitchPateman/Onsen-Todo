@@ -12,23 +12,23 @@ document.addEventListener('init', function(event) {
     if (page.id === 'menuPage' || page.id === 'pendingTasksPage') {
       if (document.querySelector('#menuPage') && document.querySelector('#pendingTasksPage')) {
 
-        //Check who is signed in
-            var user = firebase.auth().currentUser;
-            if (user) {
-              // User is signed in.
-              console.log("THIS IS THE CURRENT USER:")
-              console.log(user.email);
-            } else {
-              // No user is signed in.
-            };
           // Attach an asynchronous callback to read the data at our posts reference
           db.on("child_added", function(snapshot) {
             var fillData = snapshot.val();
               var data = fillData.data;
               console.log(data);
 
-            //POPULATE THE LIST
+          //Check who is signed in
+              var user = firebase.auth().currentUser;
+              if (user) {
+                // User is signed in.
+                console.log("THIS IS THE CURRENT USER:")
+                console.log(user.email);
+              } else {
+                // No user is signed in.
+              };
 
+            //POPULATE THE LIST
                 myApp.services.tasks.create(data);
 
             //firebase read error msg
