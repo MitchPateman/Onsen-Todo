@@ -16,19 +16,28 @@
 
 
     <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
     <!-- <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase-database.js"></script> -->
     <script>
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCMeoCaO0qpJQpZLU4YM52i5Z7k-kZJdzo",
+        authDomain: "onsen-todo.firebaseapp.com",
         databaseURL: "https://onsen-todo.firebaseio.com",
-        storageBucket: "",
+        storageBucket: "onsen-todo.appspot.com",
+        messagingSenderId: "374039047370"
       };
       firebase.initializeApp(config);
       var db = firebase.database().ref('/tasks');
 
+      var email = "mitch_pateman@hotmail.com";
+      var password = "Lanta123";
+
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
 
       // INIT STUFF
       ons.ready(function() {
