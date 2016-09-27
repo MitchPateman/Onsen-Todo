@@ -19,12 +19,14 @@ document.addEventListener('init', function(event) {
               console.log(data);
 
             //POPULATE THE LIST
+
                 myApp.services.tasks.create(data);
             //Check who is signed in
                 var user = firebase.auth().currentUser;
                 if (user) {
                   // User is signed in.
-                  console.log(user);
+                  console.log("THIS IS THE CURRENT USER:")
+                  console.log(user.email);
                 } else {
                   // No user is signed in.
                 }
