@@ -17,9 +17,18 @@ document.addEventListener('init', function(event) {
             var fillData = snapshot.val();
               var data = fillData.data;
               console.log(data);
-              
+
             //POPULATE THE LIST
                 myApp.services.tasks.create(data);
+            //Check who is signed in
+                var user = firebase.auth().currentUser;
+                if (user) {
+                  // User is signed in.
+                  console.log(user);
+                } else {
+                  // No user is signed in.
+                }
+
             //firebase read error msg
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
