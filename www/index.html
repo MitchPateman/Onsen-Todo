@@ -44,6 +44,16 @@
           console.log("Onsen UI is ready!");
       });
 
+      //Check who is signed in
+          var user = firebase.auth().currentUser;
+          if (user) {
+            // User is signed in.
+            console.log("THIS IS THE CURRENT USER:")
+            console.log(user.email);
+          } else {
+            // No user is signed in.
+          }
+
       window.fn = {};
       window.fn.open = function() {
         var menu = document.getElementById('menu');
@@ -56,6 +66,8 @@
           .then(menu.close.bind(menu));
       };
     </script>
+
+
 
 </head>
 <body>
