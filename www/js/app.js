@@ -22,18 +22,25 @@ document.addEventListener('init', function(event) {
               var user = firebase.auth().currentUser;
               var email, uid;
               if (user != null) {
-                user.displayName = "MitchPateman";
-                var name = user.displayName;
-                email = user.email;
-                user.photoURL = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/7/005/0a1/1e2/3efea14.jpg";
-                var photoUrl = user.photoURL;
-                uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                                 // this value to authenticate with your backend server, if
-                                 // you have one. Use User.getToken() instead.
-              console.log("name - " + name);
-              console.log("email - " + email);
-              console.log("photoUrl - " + photoUrl);
-              console.log("uid - " + uid);
+                user.updateProfile({
+                  displayName: "MitchPateman",
+                  photoURL: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/7/005/0a1/1e2/3efea14.jpg"
+                }).then(function() {
+                  // Update successful.
+                  name = user.displayName;
+                  email = user.email;
+                  photoUrl = user.photoURL;
+                  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                                   // this value to authenticate with your backend server, if
+                                   // you have one. Use User.getToken() instead.
+                  console.log("name - " + name);
+                  console.log("email - " + email);
+                  console.log("photoUrl - " + photoUrl);
+                  console.log("uid - " + uid);
+                }, function(error) {
+                  // An error happened.
+                  console.log('error');
+                });
               };
 
             //POPULATE THE LIST
