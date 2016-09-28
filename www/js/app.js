@@ -20,12 +20,14 @@ document.addEventListener('init', function(event) {
 
           //Check who is signed in
               var user = firebase.auth().currentUser;
-              if (user) {
-                // User is signed in.
-                console.log("THIS IS THE CURRENT USER:")
-                console.log(user.email);
-              } else {
-                // No user is signed in.
+              var name, email, photoUrl, uid;
+              if (user != null) {
+                name = user.displayName;
+                email = user.email;
+                photoUrl = user.photoURL;
+                uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                                 // this value to authenticate with your backend server, if
+                                 // you have one. Use User.getToken() instead.
               };
 
             //POPULATE THE LIST
