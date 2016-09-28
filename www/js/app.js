@@ -28,6 +28,10 @@ document.addEventListener('init', function(event) {
                 uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
                                  // this value to authenticate with your backend server, if
                                  // you have one. Use User.getToken() instead.
+              console.log("name - " + name);
+              console.log("email - " + email);
+              console.log("photoUrl - " + photoUrl);
+              console.log("uid - " + uid);
               };
 
             //POPULATE THE LIST
